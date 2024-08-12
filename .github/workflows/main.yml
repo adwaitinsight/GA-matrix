@@ -1,5 +1,5 @@
 Python CI Pipeline
-on: [push, pull request]
+on: [push, pull_request]
 jobs:
   build:
     runs-ons: ${{matrix os}}
