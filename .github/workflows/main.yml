@@ -7,6 +7,17 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: [3.11, 3.12]
+        include:
+          # Add a specific combination that isn't in the general matrix
+          - os: ubuntu-20.04
+            python-version: 3.11
+        exclude:
+          # Exclude specific combinations
+          - os: windows-latest
+            python-version: 3.12
+          - os: macos-latest
+            python-version: 3.12
+
     steps:
         - name: Checkout code
           uses: actions/checkout@v4
